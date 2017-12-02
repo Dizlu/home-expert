@@ -20,15 +20,13 @@ export class HouseComponent implements OnInit, DoCheck {
   ngDoCheck() {
     const questions = this.questions;
     this.houses = this.housesPrototype;
-    console.log('houses: ', this.houses);
-    console.log('questions: ', this.questions);
 
     //houses which cannot fit onto land
     this.houses = this.houses.filter(house => questions[0].answer > house.minLength && questions[1].answer > house.minWidth);
     //how much garages?
     this.houses = this.houses.filter(house => questions[2].answer <= house.garage);
     //do you have enough rooms?
-    this.houses = this.houses.filter(house => (questions[3].answer + questions[6].answer) <= house.rooms)
+    this.houses = this.houses.filter(house => (questions[3].answer + questions[6].answer) <= (house.rooms - 1))
     //if house should be available for handicapped person
     if (this.questions[4].answer) {
       this.houses = this.houses.filter(house => house.handicapped)
@@ -36,6 +34,10 @@ export class HouseComponent implements OnInit, DoCheck {
     //should house should be trendy?
     if (this.questions[5].answer) {
       this.houses = this.houses.filter(houses => houses.design);
+    }
+
+    if (this.questions[6].answer > 2) {
+      this.houses = this.houses.filter(house => house.bathrooms >= 2);
     }
   }
 

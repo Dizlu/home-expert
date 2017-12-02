@@ -1,8 +1,13 @@
 <div class="house-list-container">
   <div *ngFor="let house of houses" class="house-container">
     <img [src]="'assets/' + house.imagePath + '-1.jpg'" alt="">
-    <p>
-      house works!
-    </p>
+    <div class="house-metadata">
+        <p class="dimensions-info">Wymiary działki minimum:</p>
+        <p class="dimensions">{{house.minWidth}} x {{house.minLength}} m</p>
+        <p class="rooms-info">Pokoje: {{house.rooms}}</p>
+        <p>Łazienki: {{house.bathrooms}}</p>
+        <p>Garaż dla {{house.garage}} samochodów</p>
+    </div>
+    
   </div>
 </div>
