@@ -21,7 +21,6 @@ export class ExpertQuestionsComponent implements OnInit {
 
   onSubmit() {
     this.onUpdate.emit(this.questions);
-    console.log('emitted: ', this.questions);
   }
 
 }

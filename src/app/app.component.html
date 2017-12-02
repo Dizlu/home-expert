@@ -8,5 +8,8 @@
     (onUpdate)="onUpdate($event)"  
   >
   </app-expert-questions>
-  <app-house></app-house>
+  <app-house
+    [houses]="houses"
+    [questions]="questions"
+  ></app-house>
 </div>
