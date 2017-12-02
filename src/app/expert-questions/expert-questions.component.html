@@ -1,0 +1,7 @@
+<ul class="questions-list">
+  <li *ngFor="let question of questions">
+    <label> {{question.text}}
+      <input [(ngModel)]="question.answer" placeholder="Enter your name">
+    </label>
+  </li>
+</ul>
