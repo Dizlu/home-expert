@@ -2,5 +2,6 @@
 export class ExpertQuestion {
   text: string;
   id: string;
-  answer: string;
+  answer: number | boolean;
+  type: string;
 }

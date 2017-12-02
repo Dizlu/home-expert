@@ -1,7 +1,9 @@
 <ul class="questions-list">
   <li *ngFor="let question of questions">
     <label> {{question.text}}
-      <input [(ngModel)]="question.answer" placeholder="Enter your name">
+      <input *ngIf="question.type==='number'" type="number" [(ngModel)]="question.answer" placeholder="Enter your name">
+      <input *ngIf="question.type==='boolean'" type="checkbox" [(ngModel)]="question.answer">
     </label>
   </li>
 </ul>
+<button (click)="onSubmit()" >Znajdź wymarzony dom</button>

@@ -19,4 +19,8 @@ export class ExpertQuestionsComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit() {
+    console.log(this.questions);
+  }
+
 }
