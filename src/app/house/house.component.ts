@@ -35,7 +35,7 @@ export class HouseComponent implements OnInit, DoCheck {
     if (this.questions[5].answer) {
       this.houses = this.houses.filter(houses => houses.design);
     }
-
+    //should have more bathrooms?
     if (this.questions[6].answer > 2) {
       this.houses = this.houses.filter(house => house.bathrooms >= 2);
     }
