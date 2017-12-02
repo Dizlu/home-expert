@@ -1,6 +1,6 @@
 import uuid from 'uuid/v1';
 
-import { ExpertQuestion } from './expert-question';
+import { ExpertQuestion } from '../expert-question';
 
 export const QUESTIONS: ExpertQuestion[] = [
   {  text: 'Jaka jest dlugość twojej działki?', id: uuid(), answer: 100, type: 'number' },

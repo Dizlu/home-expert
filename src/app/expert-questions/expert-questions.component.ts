@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import uuid from 'uuid/v1';
 
-import { QUESTIONS } from '../mock-expert-questions';
 import { ExpertQuestion } from '../expert-question';
 
 @Component({
@@ -11,7 +10,8 @@ import { ExpertQuestion } from '../expert-question';
 })
 export class ExpertQuestionsComponent implements OnInit {
 
-  questions = QUESTIONS;
+  @Input() questions: ExpertQuestion[];
+  @Output() onUpdate = new EventEmitter<ExpertQuestion[]>();
 
   constructor() {
   }
@@ -20,7 +20,8 @@ export class ExpertQuestionsComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.questions);
+    this.onUpdate.emit(this.questions);
+    console.log('emitted: ', this.questions);
   }
 
 }

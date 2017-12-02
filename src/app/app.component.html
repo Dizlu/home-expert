@@ -3,6 +3,10 @@
   <h1 class="main-welcome">
     Proszę odpowiedz na te pytania:
   </h1>
-  <app-expert-questions></app-expert-questions>
+  <app-expert-questions
+    [questions]="questions"
+    (onUpdate)="onUpdate($event)"  
+  >
+  </app-expert-questions>
   <app-house></app-house>
 </div>
